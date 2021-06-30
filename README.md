@@ -18,6 +18,8 @@ You'll need a Docker daemon running to build container images.
 Use the Paketo builder:
 ```bash
 $ pack config default-builder gcr.io/paketo-buildpacks/builder:base
+  
+
 ```
 
 You're now ready to use CNB with Paketo.
