@@ -36,7 +36,7 @@ value = "${HOSTNAME}"
 
 [[labels]]
 key = "kpack.builder.instance"
-value = "mycompany#1"
+value = "mycompany-instance-one"
 EOL
 
 

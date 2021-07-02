@@ -1,6 +1,7 @@
 
 APP_IMAGE=myorg/cnb-nodejs
 BUILDPACK_IMAGE=owner-buildpack
+BUILDPACK_VERSION=0.0.3
 BUILDPACK_CNB=owner-buildpack.cnb
 
 # pack config default-builder gcr.io/paketo-buildpacks/builder:base
@@ -13,8 +14,8 @@ inspect: buildpack
 
 package-image: 
 	pack buildpack package $(BUILDPACK_IMAGE) --config packages/package.toml 
-	docker tag $(BUILDPACK_IMAGE)  harbor.mytanzu.xyz/library/$(BUILDPACK_IMAGE):0.0.2
-	docker push harbor.mytanzu.xyz/library/$(BUILDPACK_IMAGE):0.0.2
+	docker tag $(BUILDPACK_IMAGE)  harbor.mytanzu.xyz/library/$(BUILDPACK_IMAGE):$(BUILDPACK_VERSION)
+	docker push harbor.mytanzu.xyz/library/$(BUILDPACK_IMAGE):$(BUILDPACK_VERSION)
 
 package-cnb:
 	pack buildpack package $(BUILDPACK_CNB) --config packages/package.toml --format file
