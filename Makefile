@@ -13,7 +13,8 @@ inspect: buildpack
 
 package-image: 
 	pack buildpack package $(BUILDPACK_IMAGE) --config packages/package.toml 
-	docker tag $(BUILDPACK_IMAGE)  harbor.mytanzu.xyz/library/$(BUILDPACK_IMAGE):0.0.1
+	docker tag $(BUILDPACK_IMAGE)  harbor.mytanzu.xyz/library/$(BUILDPACK_IMAGE):0.0.2
+	docker push harbor.mytanzu.xyz/library/$(BUILDPACK_IMAGE):0.0.2
 
 package-cnb:
 	pack buildpack package $(BUILDPACK_CNB) --config packages/package.toml --format file

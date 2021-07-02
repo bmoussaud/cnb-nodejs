@@ -21,6 +21,7 @@ echo "This image has been built by my TSM instance !" > ${owner_layer}/owner.txt
 
 echo -e 'launch = true' > "$layers_dir/owner.toml"
 
+
 # 9. ADD A BOM
 cat >> "$layers_dir/launch.toml" <<EOL
 [[bom]]
@@ -30,9 +31,12 @@ name = "owner"
 version = "$ruby_version"
 
 [[labels]]
-key = "benoit_key"
-value = "benoit_value"
+key = "kpack.builder.hostname"
+value = "${HOSTNAME}"
 
+[[labels]]
+key = "kpack.builder.instance"
+value = "mycompany#1"
 EOL
 
 
